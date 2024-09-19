@@ -11,7 +11,16 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        sans: ['"Poppins"', 'sans-serif'],  // Set Poppins as the default sans font
+        abhaya: ['"Abhaya Libre"', 'serif'], // You can still use Abhaya Libre
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    [
+      require('@tailwindcss/forms'),
+      require('@tailwindcss/aspect-ratio'),
+    ]
+  ],
 };
