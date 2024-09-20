@@ -2,7 +2,7 @@ export default function Hero() {
   return (
     <div className="relative isolate overflow-hidden bg-white">
 
-      <div className="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 sm:flex sm:items-center lg:px-8 lg:pt-12 lg:py-40">
+      <div className="mx-auto max-w-7xl px-6 pt-10 sm:flex sm:items-center lg:px-8 lg:pt-12">
         <div className=":mt-0 mx-auto max-w-7xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8">
           <h1 className="font-abhaya capitalize text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 lg:text-7xl">
             Premium, <br />
