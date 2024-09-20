@@ -66,8 +66,8 @@ export default function Categories() {
     return (
         <>
             <section aria-labelledby="trending-heading" className="bg-white">
-                <div className="py-16 sm:py-24 lg:mx-auto lg:max-w-7xl lg:px-8">
-                    <div className="flex pb-10 sm:pb-14 items-center justify-center px-4 sm:px-6 lg:px-0">
+                <div className="py-32 sm:py-40 lg:mx-auto lg:max-w-7xl lg:px-8">
+                    <div className="flex pb-10 sm:pb-14 items-center sm:justify-center px-4 sm:px-6 lg:px-0">
                         <h2 id="trending-heading" className="font-abhaya text-5xl lg:text-7xl font-bold tracking-tight text-[#1a1a1a]">
                             Nos Catégories
                         </h2>
@@ -77,7 +77,7 @@ export default function Categories() {
                         <div className="relative w-full overflow-x-auto">
                             <ul
                                 role="list"
-                                className="mx-4 inline-flex space-x-8 sm:mx-6 lg:mx-0 lg:grid lg:grid-cols-4 lg:gap-x-8 lg:space-x-0"
+                                className="pb-5 mx-4 inline-flex space-x-8 sm:mx-6 lg:mx-0 lg:grid lg:grid-cols-4 lg:gap-x-8 lg:space-x-0"
                             >
                                 {trendingProducts.map((product) => (
                                     <li key={product.id} className="inline-flex w-64 flex-col text-center lg:w-auto">
@@ -106,7 +106,7 @@ export default function Categories() {
 
                     <div className="mt-12 px-4 sm:hidden">
                         <a href="#" className="text-sm font-semibold text-[#FF80C8]">
-                            See everything
+                            Voir tout
                             <span aria-hidden="true"> &rarr;</span>
                         </a>
                     </div>
