@@ -8,7 +8,7 @@ const trendingProducts = [
         id: 1,
         name: 'Long wear fixing spray',
         color: 'Black',
-        price: '$35',
+        price: '35 MAD',
         href: '#',
         imageSrc: '/best-sellers/1.png',
         imageAlt: 'Black machined steel pen with hexagonal grip and small white logo at top.',
@@ -22,7 +22,7 @@ const trendingProducts = [
         id: 2,
         name: 'hyaluronic acid jelly primer',
         color: 'Black',
-        price: '$35',
+        price: '35 MAD',
         href: '#',
         imageSrc: '/best-sellers/2.png',
         imageAlt: 'Black machined steel pen with hexagonal grip and small white logo at top.',
@@ -36,7 +36,7 @@ const trendingProducts = [
         id: 3,
         name: 'Powder blush',
         color: 'Black',
-        price: '$35',
+        price: '35 MAD',
         href: '#',
         imageSrc: '/best-sellers/3.png',
         imageAlt: 'Black machined steel pen with hexagonal grip and small white logo at top.',
@@ -50,7 +50,7 @@ const trendingProducts = [
         id: 4,
         name: 'Pack pinceaux MUA',
         color: 'Black',
-        price: '$35',
+        price: '35 MAD',
         href: '#',
         imageSrc: '/best-sellers/4.png',
         imageAlt: 'Black machined steel pen with hexagonal grip and small white logo at top.',
@@ -68,9 +68,9 @@ export default function BestSellers() {
     return (
         <>
             <section aria-labelledby="trending-heading" className="bg-white">
-                <div className="py-16 sm:py-24 lg:mx-auto lg:max-w-7xl lg:px-8">
+                <div className="pb-32 sm:pb-40 lg:mx-auto lg:max-w-7xl lg:px-8">
                     <div className="flex pb-10 sm:pb-14 items-center sm:justify-center px-4 sm:px-6 lg:px-0">
-                        <h2 id="trending-heading" className="font-abhaya text-5xl lg:text-7xl font-bold tracking-tight text-[#1a1a1a]">
+                        <h2 id="trending-heading" className="font-abhaya text-center text-5xl lg:text-7xl font-bold tracking-tight text-[#1a1a1a]">
                             Best Sellers
                         </h2>
                     </div>
@@ -79,7 +79,7 @@ export default function BestSellers() {
                         <div className="relative w-full overflow-x-auto">
                             <ul
                                 role="list"
-                                className="mx-4 inline-flex space-x-8 sm:mx-6 lg:mx-0 lg:grid lg:grid-cols-4 lg:gap-x-8 lg:space-x-0"
+                                className="pb-5 mx-4 inline-flex space-x-8 sm:mx-6 lg:mx-0 lg:grid lg:grid-cols-4 lg:gap-x-8 lg:space-x-0"
                             >
                                 {trendingProducts.map((product) => (
                                     <li key={product.id} className="inline-flex w-64 flex-col text-center lg:w-auto">
@@ -92,7 +92,7 @@ export default function BestSellers() {
                                                 />
                                             </div>
                                             <div className="mt-6">
-                                                <h3 className="mt-1 font-semibold text-lg text-[#1a1a1a]">
+                                                <h3 className="mt-1 lg:h-14 font-semibold text-lg text-[#1a1a1a]">
                                                     <a href={product.href}>
                                                         <span className="absolute inset-0" />
                                                         {product.name}
@@ -112,7 +112,7 @@ export default function BestSellers() {
 
                     <div className="mt-12 px-4 sm:hidden">
                         <a href="#" className="text-sm font-semibold text-[#FF80C8]">
-                            See everything
+                            Voir tout
                             <span aria-hidden="true"> &rarr;</span>
                         </a>
                     </div>
