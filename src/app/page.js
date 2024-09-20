@@ -1,5 +1,6 @@
 'use client'
 
+import Tape from '@/components/tape'
 import Navbar from '@/components/navbar'
 import Hero from '@/components/hero'
 import Categories from '@/components/categories'
@@ -14,6 +15,7 @@ export default function Home() {
 
   return (
     <div className="bg-white">
+      <Tape />
       <Navbar />
 
       <main className="isolate">
