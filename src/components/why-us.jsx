@@ -22,8 +22,8 @@ const features = [
 
 export default function Whyus() {
     return (
-        <div className="overflow-hidden bg-white py-24 sm:py-32">
-            <div className="flex pb-10 sm:pb-14 items-center justify-center px-4 sm:px-6 lg:px-0">
+        <div className="overflow-hidden bg-white pb-32 sm:pb-40">
+            <div className="flex pb-10 sm:pb-14 items-center sm:justify-center px-4 sm:px-6 lg:px-0">
                 <h2 id="trending-heading" className="font-abhaya capitalize text-5xl lg:text-7xl font-bold tracking-tight text-[#1a1a1a]">
                     Ce qui nous distingue
                 </h2>
@@ -31,7 +31,7 @@ export default function Whyus() {
 
             <div className="mx-auto mt-8 max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-                    <div className="mt-16 lg:pl-4 lg:pt-4">
+                    <div className="lg:pl-4 lg:pt-4">
                         <div className="lg:max-w-lg">
                             <div className='flex items-center mb-16'>
                                 <Image src="/star.svg" width={35} height={37} alt='why us icon' />
@@ -50,7 +50,7 @@ export default function Whyus() {
                             </dl>
                         </div>
                     </div>
-                    <div className="flex items-start justify-end lg:order-first">
+                    <div className="lg:flex items-start justify-end lg:order-first">
                         <img
                             alt="Product screenshot"
                             src="/why-us.png"
