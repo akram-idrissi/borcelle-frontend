@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, ShoppingBagIcon, MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
     { name: 'Yeux', href: '#' },
@@ -15,7 +15,7 @@ export default function Navbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     return (
-        <header className="sticky top-0 z-50 bg-white/60 backdrop-blur-lg">
+        <header className="sticky top-10 z-50 bg-white/60 backdrop-blur-lg">
             <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
                 <div className="flex lg:flex-1">
                     <a href="#" className="-m-1.5 p-1.5">
@@ -41,6 +41,20 @@ export default function Navbar() {
                     ))}
                 </div>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+                    <a href="#" className="group -m-2 mr-4 flex items-center p-2">
+                        <MagnifyingGlassIcon
+                            aria-hidden="true"
+                            className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
+                        />
+                    </a>
+                    <a href="#" className="group -m-2 mr-4 flex items-center p-2">
+                        <ShoppingBagIcon
+                            aria-hidden="true"
+                            className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
+                        />
+                        <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
+                        <span className="sr-only">items in cart, view bag</span>
+                    </a>
                     <a href="#" className="text-sm font-semibold border-2 rounded-md border-[#FF80C8] px-4 py-2 text-gray-900">
                         Log in <span aria-hidden="true">&rarr;</span>
                     </a>
@@ -86,6 +100,20 @@ export default function Navbar() {
                                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                 >
                                     Log in
+                                </a>
+                                <a href="#" className="group -m-2 mr-4 flex items-center p-2">
+                                    <ShoppingBagIcon
+                                        aria-hidden="true"
+                                        className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
+                                    />
+                                    <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
+                                    <span className="sr-only">items in cart, view bag</span>
+                                </a>
+                                <a href="#" className="group -m-2 mr-4 flex items-center p-2">
+                                    <MagnifyingGlassIcon
+                                        aria-hidden="true"
+                                        className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
+                                    />
                                 </a>
                             </div>
                         </div>
