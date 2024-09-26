@@ -9,7 +9,7 @@ const trendingProducts = [
         name: 'Long wear fixing spray',
         color: 'Black',
         price: '35 MAD',
-        href: '#',
+        href: 'produits/produit-1',
         imageSrc: '/best-sellers/1.png',
         imageAlt: 'Black machined steel pen with hexagonal grip and small white logo at top.',
         availableColors: [
@@ -23,7 +23,7 @@ const trendingProducts = [
         name: 'hyaluronic acid jelly primer',
         color: 'Black',
         price: '35 MAD',
-        href: '#',
+        href: 'produits/produit-1',
         imageSrc: '/best-sellers/2.png',
         imageAlt: 'Black machined steel pen with hexagonal grip and small white logo at top.',
         availableColors: [
@@ -37,7 +37,7 @@ const trendingProducts = [
         name: 'Powder blush',
         color: 'Black',
         price: '35 MAD',
-        href: '#',
+        href: 'produits/produit-1',
         imageSrc: '/best-sellers/3.png',
         imageAlt: 'Black machined steel pen with hexagonal grip and small white logo at top.',
         availableColors: [
@@ -51,7 +51,7 @@ const trendingProducts = [
         name: 'Pack pinceaux MUA',
         color: 'Black',
         price: '35 MAD',
-        href: '#',
+        href: 'produits/produit-1',
         imageSrc: '/best-sellers/4.png',
         imageAlt: 'Black machined steel pen with hexagonal grip and small white logo at top.',
         availableColors: [
