@@ -59,7 +59,7 @@ const products = [
   {
     id: 1,
     name: 'Basic Tee 8-Pack',
-    href: '#',
+    href: '/produits/product-1',
     price: '$256',
     description: 'Get the full lineup of our Basic Tees. Have a fresh shirt all week, and an extra for laundry day.',
     options: '8 colors',
@@ -69,7 +69,7 @@ const products = [
   {
     id: 2,
     name: 'Basic Tee',
-    href: '#',
+    href: '/produits/product-1',
     price: '$32',
     description: 'Look like a visionary CEO and wear the same black t-shirt every day.',
     options: 'Black',
@@ -158,7 +158,7 @@ export default function CategoryListing() {
         </div>
       </Dialog>
 
-      <div className="mt-10">
+      <div className="sticky top-0 z-50 bg-white mt-10">
         <nav aria-label="Breadcrumb" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ol role="list" className="border-b flex items-center space-x-4 py-4">
             {breadcrumbs.map((breadcrumb) => (
