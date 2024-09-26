@@ -7,7 +7,7 @@ const trendingProducts = [
         name: 'Visage',
         color: 'Black',
         price: '$35',
-        href: '#',
+        href: '/categorie/visage',
         imageSrc: '/categories/visages.png',
         imageAlt: 'Black machined steel pen with hexagonal grip and small white logo at top.',
         availableColors: [
@@ -21,7 +21,7 @@ const trendingProducts = [
         name: 'Yeux',
         color: 'Black',
         price: '$35',
-        href: '#',
+        href: '/categorie/yeux',
         imageSrc: '/categories/yeux.png',
         imageAlt: 'Black machined steel pen with hexagonal grip and small white logo at top.',
         availableColors: [
@@ -35,7 +35,7 @@ const trendingProducts = [
         name: 'Lévres',
         color: 'Black',
         price: '$35',
-        href: '#',
+        href: '/categorie/levres',
         imageSrc: '/categories/levres.png',
         imageAlt: 'Black machined steel pen with hexagonal grip and small white logo at top.',
         availableColors: [
@@ -49,7 +49,7 @@ const trendingProducts = [
         name: 'Accéssoires',
         color: 'Black',
         price: '$35',
-        href: '#',
+        href: '/categorie/accessoires',
         imageSrc: '/categories/gift.png',
         imageAlt: 'Black machined steel pen with hexagonal grip and small white logo at top.',
         availableColors: [
