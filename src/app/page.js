@@ -15,8 +15,8 @@ export default function Home() {
 
   return (
     <div className="bg-white">
-      <Tape />
-      <Navbar />
+      <Tape sticky={true} />
+      <Navbar sticky={true} />
 
       <main className="isolate">
         <Hero />
