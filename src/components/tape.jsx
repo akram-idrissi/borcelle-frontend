@@ -1,10 +1,5 @@
 'use client'
 
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
-
-
-const currencies = ['CAD', 'USD', 'AUD', 'EUR', 'GBP']
-
 
 export default function Tape({sticky=false}) {
 
