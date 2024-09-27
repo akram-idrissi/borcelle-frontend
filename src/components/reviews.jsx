@@ -35,7 +35,7 @@ function classNames(...classes) {
 export default function Reviews() {
   return (
     <div className="bg-white">
-      <div className='my-28'>
+      <div className='my-28 px-4 sm:px-0'>
         <h2 className="text-4xl sm:text-7xl sm:text-center font-abhaya font-bold mb-10">Customer Reviews</h2>
 
         <div className="-my-10">
