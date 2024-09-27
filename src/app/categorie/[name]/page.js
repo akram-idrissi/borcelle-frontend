@@ -158,7 +158,7 @@ export default function CategoryListing() {
         </div>
       </Dialog>
 
-      <div className="sticky top-0 z-50 bg-white mt-10">
+      <div className="sticky top-0 z-30 bg-white mt-10">
         <nav aria-label="Breadcrumb" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ol role="list" className="border-b flex items-center space-x-4 py-4">
             {breadcrumbs.map((breadcrumb) => (
