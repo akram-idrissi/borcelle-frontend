@@ -2,12 +2,12 @@
 
 import Tape from '@/components/tape'
 import Navbar from '@/components/navbar'
-import Hero from '@/components/hero'
-import Categories from '@/components/categories'
-import BestSellers from '@/components/best-sellers'
-import Whyus from '@/components/why-us'
-import Testimonials from '@/components/testimonials'
-import NewsLetter from '@/components/newsLetter'
+import Hero from '@/components/home/hero'
+import Categories from '@/components/home/categories'
+import BestSellers from '@/components/home/best-sellers'
+import Whyus from '@/components/home/why-us'
+import Testimonials from '@/components/home/testimonials'
+import NewsLetter from '@/components/home/newsLetter'
 import Footer from '@/components/footer'
 
 
