@@ -144,7 +144,7 @@ export default function Example() {
         </nav>
       </div>
 
-      <main className="mx-auto max-w-7xl sm:px-6 sm:pt-16 lg:px-8">
+      <main className="mx-auto max-w-7xl sm:px-6 sm:pt-16 lg:px-8 pt-10">
         <div className="mx-auto max-w-2xl lg:max-w-none">
           {/* Product */}
           <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
