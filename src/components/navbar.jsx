@@ -18,7 +18,7 @@ export default function Navbar({sticky=false}) {
         <header className={`${sticky && "sticky"} top-10 z-50 bg-white/60 backdrop-blur-lg`}>
             <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
                 <div className="flex lg:flex-1">
-                    <a href="#" className="-m-1.5 p-1.5">
+                    <a href="/" className="-m-1.5 p-1.5">
                         <span className="sr-only">Your Company</span>
                         <img alt="" src="/logo.png" className="h-8 w-auto" />
                     </a>
@@ -64,7 +64,7 @@ export default function Navbar({sticky=false}) {
                 <div className="fixed inset-0 z-[100]" />
                 <DialogPanel className="fixed inset-y-0 right-0 z-[100] w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                     <div className="flex items-center justify-between">
-                        <a href="#" className="-m-1.5 p-1.5">
+                        <a href="/" className="-m-1.5 p-1.5">
                             <span className="sr-only">Your Company</span>
                             <img
                                 alt=""
