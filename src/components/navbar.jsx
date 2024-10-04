@@ -55,9 +55,9 @@ export default function Navbar({sticky=false}) {
                         <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
                         <span className="sr-only">items in cart, view bag</span>
                     </a>
-                    <a href="#" className="text-sm font-semibold border-2 rounded-md border-[#FF80C8] px-4 py-2 text-gray-900">
+                    {/* <a href="#" className="text-sm font-semibold border-2 rounded-md border-[#FF80C8] px-4 py-2 text-gray-900">
                         Log in <span aria-hidden="true">&rarr;</span>
-                    </a>
+                    </a> */}
                 </div>
             </nav>
             <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
@@ -95,12 +95,12 @@ export default function Navbar({sticky=false}) {
                                 ))}
                             </div>
                             <div className="py-6">
-                                <a
+                                {/* <a
                                     href="#"
                                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                 >
                                     Log in
-                                </a>
+                                </a> */}
                                 <a href="#" className="group -m-2 mr-4 flex items-center p-2">
                                     <ShoppingBagIcon
                                         aria-hidden="true"
