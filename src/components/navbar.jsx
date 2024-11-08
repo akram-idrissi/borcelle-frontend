@@ -5,10 +5,10 @@ import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, ShoppingBagIcon, MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
-    { name: 'Yeux', href: '#' },
-    { name: 'Visage', href: '#' },
-    { name: 'Lévres', href: '#' },
-    { name: 'Accéssoires', href: '#' },
+    { name: 'Yeux', href: '/categorie/yeux' },
+    { name: 'Visage', href: '/categorie/visage' },
+    { name: 'Lévres', href: '/categorie/levres' },
+    { name: 'Accéssoires', href: '/categorie/accessoires' },
 ]
 
 export default function Navbar({sticky=false}) {
