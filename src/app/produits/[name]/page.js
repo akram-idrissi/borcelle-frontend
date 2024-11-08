@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { usePathname, useSearchParams } from 'next/navigation';
 
 import Tape from '@/components/tape'
 import Navbar from '@/components/navbar'
@@ -25,7 +26,6 @@ import {
 } from '@headlessui/react'
 
 
-const breadcrumbs = [{ id: 1, name: 'Categories', href: '#' }]
 const product = {
   name: 'Zip Tote Basket',
   price: '$140',
@@ -99,12 +99,16 @@ const relatedProducts = [
   },
   // More products...
 ]
+const categoriesURI = "/categorie";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function Example() {
+  const productName = usePathname().split("/").slice(-1).pop();
+  const searchParams = useSearchParams();
+  const categoryName = searchParams.get('category');
   const [selectedColor, setSelectedColor] = useState(product.colors[0])
 
   return (
@@ -116,30 +120,28 @@ export default function Example() {
       <div className="sticky top-0 z-50 bg-white mt-10">
         <nav aria-label="Breadcrumb" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ol role="list" className="border-b flex items-center space-x-4 py-4">
-            {breadcrumbs.map((breadcrumb) => (
-              <li key={breadcrumb.id}>
+              <li>
                 <div className="flex items-center">
-                  <a href={breadcrumb.href} className="mr-4 text-sm font-medium text-gray-900">
-                    {breadcrumb.name}
+                  <a href='/' className="capitalize mr-4 text-sm font-medium text-gray-900">
+                    Accueil
                   </a>
                   <svg viewBox="0 0 6 20" aria-hidden="true" className="h-5 w-auto text-gray-300">
                     <path d="M4.878 4.34H3.551L.27 16.532h1.327l3.281-12.19z" fill="currentColor" />
                   </svg>
                 </div>
               </li>
-            ))}
             <li className="text-sm">
-              <a href="#" aria-current="page" className="font-medium text-gray-500 hover:text-gray-600">
-                Visage
+              <a href={`${categoriesURI}/${categoryName}`} aria-current="page" className="capitalize font-medium text-gray-500 hover:text-gray-600">
+                {categoryName}
               </a>
             </li>
             <svg viewBox="0 0 6 20" aria-hidden="true" className="h-5 w-auto text-gray-300">
                     <path d="M4.878 4.34H3.551L.27 16.532h1.327l3.281-12.19z" fill="currentColor" />
                   </svg>
             <li className="text-sm">
-              <a href="#" aria-current="page" className="font-medium text-gray-500 hover:text-gray-600">
-                Produit 1
-              </a>
+              <span aria-current="page" className="capitalize font-medium text-gray-500 hover:text-gray-600">
+                {productName}
+              </span>
             </li>
           </ol>
         </nav>
