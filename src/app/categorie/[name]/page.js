@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link';
 import { useState } from 'react'
 import { usePathname } from 'next/navigation';
 
@@ -166,8 +167,8 @@ export default function CategoryListing() {
           <ol role="list" className="border-b flex items-center space-x-4 py-4">
               <li>
                 <div className="flex items-center">
-                  <a href={`/categorie/${category}`} className="capitalize mr-4 text-sm font-medium text-gray-900">
-                    categories
+                  <a href='/' className="capitalize mr-4 text-sm font-medium text-gray-900">
+                    Accueil
                   </a>
                   <svg viewBox="0 0 6 20" aria-hidden="true" className="h-5 w-auto text-gray-300">
                     <path d="M4.878 4.34H3.551L.27 16.532h1.327l3.281-12.19z" fill="currentColor" />
@@ -175,9 +176,9 @@ export default function CategoryListing() {
                 </div>
               </li>
             <li className="text-sm">
-              <a href="#" aria-current="page" className="capitalize font-medium text-gray-500 hover:text-gray-600">
+              <span  aria-current="page" className="capitalize font-medium text-gray-500 hover:text-gray-600">
                 {category}
-              </a>
+              </span>
             </li>
           </ol>
         </nav>
@@ -253,10 +254,10 @@ export default function CategoryListing() {
                   </div>
                   <div className="flex flex-1 flex-col space-y-2 p-4">
                     <h3 className="text-sm font-medium text-gray-900">
-                      <a href={product.href}>
-                        <span aria-hidden="true" className="absolute inset-0" />
-                        {product.name}
-                      </a>
+                    <Link href={{ pathname: product.href, query: { category: category} }}>
+                      <span aria-hidden="true" className="absolute inset-0" />
+                      {product.name}
+                    </Link>
                     </h3>
                     <p className="text-sm text-gray-500">{product.description}</p>
                     <div className="flex flex-1 flex-col justify-end">
