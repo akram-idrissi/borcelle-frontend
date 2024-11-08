@@ -1,6 +1,8 @@
 'use client'
 
 import { useState } from 'react'
+import { usePathname, useSearchParams } from 'next/navigation';
+
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PlusIcon } from '@heroicons/react/20/solid'
 
@@ -18,7 +20,6 @@ import {
 } from '@headlessui/react'
 
 
-const breadcrumbs = [{ id: 1, name: 'Categories', href: '#' }]
 const filters = [
   {
     id: 'color',
@@ -82,6 +83,7 @@ const products = [
 
 
 export default function CategoryListing() {
+  const category = usePathname().split("/").slice(-1).pop();
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
 
   return (
@@ -162,21 +164,19 @@ export default function CategoryListing() {
       <div className="sticky top-0 z-30 bg-white mt-10">
         <nav aria-label="Breadcrumb" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ol role="list" className="border-b flex items-center space-x-4 py-4">
-            {breadcrumbs.map((breadcrumb) => (
-              <li key={breadcrumb.id}>
+              <li>
                 <div className="flex items-center">
-                  <a href={breadcrumb.href} className="mr-4 text-sm font-medium text-gray-900">
-                    {breadcrumb.name}
+                  <a href={`/categorie/${category}`} className="capitalize mr-4 text-sm font-medium text-gray-900">
+                    categories
                   </a>
                   <svg viewBox="0 0 6 20" aria-hidden="true" className="h-5 w-auto text-gray-300">
                     <path d="M4.878 4.34H3.551L.27 16.532h1.327l3.281-12.19z" fill="currentColor" />
                   </svg>
                 </div>
               </li>
-            ))}
             <li className="text-sm">
-              <a href="#" aria-current="page" className="font-medium text-gray-500 hover:text-gray-600">
-                Visage
+              <a href="#" aria-current="page" className="capitalize font-medium text-gray-500 hover:text-gray-600">
+                {category}
               </a>
             </li>
           </ol>
