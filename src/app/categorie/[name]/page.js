@@ -73,7 +73,8 @@ const products = [
     price: '$32',
     description: 'Look like a visionary CEO and wear the same black t-shirt every day.',
     options: 'Black',
-    imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/category-page-02-image-card-02.jpg',
+    imageSrc: '/categories/visages.png',
+    //imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/category-page-02-image-card-02.jpg',
     imageAlt: 'Front of plain black t-shirt.',
   },
   // More products...
