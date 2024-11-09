@@ -5,17 +5,17 @@ import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, ShoppingBagIcon, MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
-    { name: 'Yeux', href: '/categorie/yeux' },
-    { name: 'Visage', href: '/categorie/visage' },
-    { name: 'Lévres', href: '/categorie/levres' },
-    { name: 'Accéssoires', href: '/categorie/accessoires' },
+    { name: 'Pants', href: '/categories/pants' },
+    { name: 'T-shirts', href: '/categories/t-shirts' },
+    { name: 'Hats', href: '/categories/hats' },
+    { name: 'Shoes', href: '/categories/shoes' },
 ]
 
 export default function Navbar({sticky=false}) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     return (
-        <header className={`${sticky && "sticky"} top-10 z-50 bg-white/60 backdrop-blur-lg`}>
+        <header className={`${sticky && "sticky"} top-0 z-50 bg-white/60 backdrop-blur-lg`}>
             <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
                 <div className="flex lg:flex-1">
                     <a href="/" className="-m-1.5 p-1.5">
