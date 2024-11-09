@@ -1,9 +1,9 @@
 const navigation = {
     solutions: [
-        { name: 'Visage', href: '#' },
-        { name: 'Yeux', href: '#' },
-        { name: 'Lévres', href: '#' },
-        { name: 'Accéssoires', href: '#' },
+        { name: 'Pants', href: '#' },
+        { name: 'T-shirts', href: '#' },
+        { name: 'Hats', href: '#' },
+        { name: 'Shoes', href: '#' },
     ],
     support: [
         { name: 'Pricing', href: '#' },
@@ -39,7 +39,7 @@ const navigation = {
         },
         {
             name: 'Instagram',
-            href: 'https://www.instagram.com/muacosmetics.ma/',
+            href: 'https://www.instagram.com/Borcelle.ma/',
             icon: (props) => (
                 <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
                     <path
@@ -52,7 +52,7 @@ const navigation = {
         },
         {
             name: 'X',
-            href: 'https://www.tiktok.com/@muacosmetics.ma',
+            href: 'https://www.tiktok.com/@Borcelle.ma',
             icon: (props) => (
                 <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
                     <path d="M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5685 21H20.8131L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z" />
@@ -64,7 +64,7 @@ const navigation = {
 
 export default function Footer() {
     return (
-        <footer aria-labelledby="footer-heading" className="bg-[#ffe4f3]">
+        <footer aria-labelledby="footer-heading" className="bg-black">
             <h2 id="footer-heading" className="sr-only">
                 Footer
             </h2>
@@ -76,13 +76,13 @@ export default function Footer() {
                             src="/logo.png"
                             className="h-7"
                         />
-                        <p className="text-sm leading-6 text-black">
-                            MUA est la marque incontournable en matière de maquillage végétalien tendance, abordable et de qualité professionnelle.
+                        <p className="text-sm leading-6 text-white">
+                            Borcelle offers affordable clothes without compromising on quality.
 
                         </p>
                         <div className="flex space-x-6">
                             {navigation.social.map((item) => (
-                                <a key={item.name} href={item.href} className="text-gray-600 hover:text-gray-900">
+                                <a key={item.name} href={item.href} className="text-white hover:text-white">
                                     <span className="sr-only">{item.name}</span>
                                     <item.icon aria-hidden="true" className="h-6 w-6" />
                                 </a>
@@ -92,11 +92,11 @@ export default function Footer() {
                     <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
                         <div className="md:grid md:grid-cols-2 md:gap-8">
                             <div>
-                                <h3 className="text-sm font-semibold leading-6 text-gray-900">Catégories</h3>
+                                <h3 className="text-sm font-semibold leading-6 text-white">Catégories</h3>
                                 <ul role="list" className="mt-6 space-y-4">
                                     {navigation.solutions.map((item) => (
                                         <li key={item.name}>
-                                            <a href={item.href} className="text-sm leading-6 text-gray-600 hover:text-gray-900">
+                                            <a href={item.href} className="text-sm leading-6 text-white hover:text-white">
                                                 {item.name}
                                             </a>
                                         </li>
@@ -104,11 +104,11 @@ export default function Footer() {
                                 </ul>
                             </div>
                             <div className="mt-10 md:mt-0">
-                                <h3 className="text-sm font-semibold leading-6 text-gray-900">Support</h3>
+                                <h3 className="text-sm font-semibold leading-6 text-white">Support</h3>
                                 <ul role="list" className="mt-6 space-y-4">
                                     {navigation.support.map((item) => (
                                         <li key={item.name}>
-                                            <a href={item.href} className="text-sm leading-6 text-gray-600 hover:text-gray-900">
+                                            <a href={item.href} className="text-sm leading-6 text-white hover:text-white">
                                                 {item.name}
                                             </a>
                                         </li>
@@ -118,11 +118,11 @@ export default function Footer() {
                         </div>
                         <div className="md:grid md:grid-cols-2 md:gap-8">
                             <div>
-                                <h3 className="text-sm font-semibold leading-6 text-gray-900">Company</h3>
+                                <h3 className="text-sm font-semibold leading-6 text-white">Company</h3>
                                 <ul role="list" className="mt-6 space-y-4">
                                     {navigation.company.map((item) => (
                                         <li key={item.name}>
-                                            <a href={item.href} className="text-sm leading-6 text-gray-600 hover:text-gray-900">
+                                            <a href={item.href} className="text-sm leading-6 text-white hover:text-white">
                                                 {item.name}
                                             </a>
                                         </li>
@@ -130,11 +130,11 @@ export default function Footer() {
                                 </ul>
                             </div>
                             <div className="mt-10 md:mt-0">
-                                <h3 className="text-sm font-semibold leading-6 text-gray-900">Legal</h3>
+                                <h3 className="text-sm font-semibold leading-6 text-white">Legal</h3>
                                 <ul role="list" className="mt-6 space-y-4">
                                     {navigation.legal.map((item) => (
                                         <li key={item.name}>
-                                            <a href={item.href} className="text-sm leading-6 text-gray-600 hover:text-gray-900">
+                                            <a href={item.href} className="text-sm leading-6 text-white hover:text-white">
                                                 {item.name}
                                             </a>
                                         </li>
@@ -145,7 +145,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
-                    <p className="text-xs leading-5 text-gray-500">&copy; 2024 Mua Cosmetic, Inc. All rights reserved.</p>
+                    <p className="text-xs leading-5 text-white">&copy; 2024 Borcelle, Inc. All rights reserved.</p>
                 </div>
             </div>
         </footer>
