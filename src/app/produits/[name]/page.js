@@ -34,8 +34,8 @@ const product = {
     {
       id: 1,
       name: 'Angled view',
-      //src: 'https://tailwindui.com/plus/img/ecommerce-images/product-page-03-product-01.jpg',
-      src: '/categories/gift.png',
+      src: 'https://tailwindui.com/plus/img/ecommerce-images/product-page-03-product-01.jpg',
+      //src: '/categories/gift.png',
       alt: 'Angled front view with bag zipped and handles upright.',
     },
     // More images...
@@ -114,7 +114,7 @@ export default function Example() {
   return (
     <div className="bg-white">
 
-      <Tape />
+      {/*<Tape />*/}
       <Navbar />
 
       <div className="sticky top-0 z-50 bg-white mt-10">
@@ -167,7 +167,7 @@ export default function Example() {
                       </span>
                       <span
                         aria-hidden="true"
-                        className="pointer-events-none absolute inset-0 rounded-md ring-2 ring-transparent ring-offset-2 group-data-[selected]:ring-[#FF80C8]"
+                        className="pointer-events-none absolute inset-0 rounded-md ring-2 ring-transparent ring-offset-2 group-data-[selected]:ring-black"
                       />
                     </Tab>
                   ))}
@@ -206,7 +206,7 @@ export default function Example() {
                         key={rating}
                         aria-hidden="true"
                         className={classNames(
-                          product.rating > rating ? 'text-[#FF80C8]' : 'text-gray-300',
+                          product.rating > rating ? 'text-black' : 'text-gray-300',
                           'h-5 w-5 flex-shrink-0',
                         )}
                       />
@@ -262,7 +262,7 @@ export default function Example() {
                 <div className="mt-10 flex">
                   <button
                     type="submit"
-                    className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-[#FF80C8] px-8 py-3 text-base font-medium text-white hover:bg-[#FF80C8] focus:outline-none focus:ring-2 focus:ring-[#FF80C8] focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full"
+                    className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-black px-8 py-3 text-base font-medium text-white hover:bg-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full"
                   >
                     Add to bag
                   </button>
@@ -287,7 +287,7 @@ export default function Example() {
                     <Disclosure key={detail.name} as="div">
                       <h3>
                         <DisclosureButton className="group relative flex w-full items-center justify-between py-6 text-left">
-                          <span className="text-sm font-medium text-gray-900 group-data-[open]:text-[#FF80C8]">
+                          <span className="text-sm font-medium text-gray-900 group-data-[open]:text-black">
                             {detail.name}
                           </span>
                           <span className="ml-6 flex items-center">
@@ -297,7 +297,7 @@ export default function Example() {
                             />
                             <MinusIcon
                               aria-hidden="true"
-                              className="hidden h-6 w-6 text-[#FF80C8] group-hover:text-[#FF80C8] group-data-[open]:block"
+                              className="hidden h-6 w-6 text-black group-hover:text-black group-data-[open]:block"
                             />
                           </span>
                         </DisclosureButton>
