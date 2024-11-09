@@ -14,7 +14,7 @@
 }
 *::-webkit-scrollbar-thumb {
   border-radius: 15px;
-  background-color: #FF80C8;
+  background-color: #000;
 }
 
 :root {
