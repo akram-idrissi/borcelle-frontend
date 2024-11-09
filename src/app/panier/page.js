@@ -107,7 +107,7 @@ export default function Panier() {
     <div className="bg-white">
       
       <header className="relative bg-white">
-        <Tape/>
+        {/*<Tape />*/}
         <Navbar/>
       </header>
 
