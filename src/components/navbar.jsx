@@ -8,7 +8,7 @@ const navigation = [
     { name: 'Pants', href: '/categories/pants' },
     { name: 'T-shirts', href: '/categories/t-shirts' },
     { name: 'Hats', href: '/categories/hats' },
-    { name: 'Shoes', href: '/categories/shoes' },
+    { name: 'Jackets', href: '/categories/jackets' },
 ]
 
 export default function Navbar({sticky=false}) {

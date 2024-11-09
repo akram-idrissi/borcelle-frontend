@@ -1,9 +1,9 @@
 const navigation = {
     solutions: [
-        { name: 'Pants', href: '#' },
-        { name: 'T-shirts', href: '#' },
-        { name: 'Hats', href: '#' },
-        { name: 'Shoes', href: '#' },
+        { name: 'Pants', href: '/categories/pants' },
+        { name: 'T-shirts', href: '/categories/t-shirts' },
+        { name: 'Hats', href: '/categories/hats' },
+        { name: 'Jackets', href: '/categories/jackets' },
     ],
     support: [
         { name: 'Pricing', href: '#' },
