@@ -6,59 +6,31 @@ import Stars from "@/helpers/stars"
 const trendingProducts = [
     {
         id: 1,
-        name: 'Long wear fixing spray',
-        color: 'Black',
-        price: '35 MAD',
-        href: 'produits/produit-1',
-        imageSrc: '/best-sellers/1.png',
-        imageAlt: 'Black machined steel pen with hexagonal grip and small white logo at top.',
-        availableColors: [
-            { name: 'Black', colorBg: '#111827' },
-            { name: 'Brass', colorBg: '#FDE68A' },
-            { name: 'Chrome', colorBg: '#E5E7EB' },
-        ],
+        name: 'Coors Colt Durham Jacket',
+        href: 'products/produit-1',
+        imageSrc: 'https://brixtonllc.myshopify.com/cdn/shop/files/COORS_COLT_DURHAM_JKT_03461_WADNM_001.jpg?format=pjpg&v=1730918343&width=460',
+        imageAlt: '',
     },
     {
         id: 2,
         name: 'hyaluronic acid jelly primer',
-        color: 'Black',
-        price: '35 MAD',
-        href: 'produits/produit-1',
-        imageSrc: '/best-sellers/2.png',
-        imageAlt: 'Black machined steel pen with hexagonal grip and small white logo at top.',
-        availableColors: [
-            { name: 'Black', colorBg: '#111827' },
-            { name: 'Brass', colorBg: '#FDE68A' },
-            { name: 'Chrome', colorBg: '#E5E7EB' },
-        ],
+        href: 'products/produit-1',
+        imageSrc: 'https://brixtonllc.myshopify.com/cdn/shop/files/e35c984e69b1131e3805a1cea3092758daa9d722.jpg?format=pjpg&v=1721751091&width=460',
+        imageAlt: '',
     },
     {
         id: 3,
-        name: 'Powder blush',
-        color: 'Black',
-        price: '35 MAD',
-        href: 'produits/produit-1',
-        imageSrc: '/best-sellers/3.png',
-        imageAlt: 'Black machined steel pen with hexagonal grip and small white logo at top.',
-        availableColors: [
-            { name: 'Black', colorBg: '#111827' },
-            { name: 'Brass', colorBg: '#FDE68A' },
-            { name: 'Chrome', colorBg: '#E5E7EB' },
-        ],
+        name: 'Coors Legends Snapback',
+        href: 'products/produit-1',
+        imageSrc: 'https://brixtonllc.myshopify.com/cdn/shop/files/dwlgneqjvkcvixexmojk.jpg?format=pjpg&v=1698967637&width=460',
+        imageAlt: '',
     },
     {
         id: 4,
-        name: 'Pack pinceaux MUA',
-        color: 'Black',
-        price: '35 MAD',
-        href: 'produits/produit-1',
-        imageSrc: '/best-sellers/4.png',
-        imageAlt: 'Black machined steel pen with hexagonal grip and small white logo at top.',
-        availableColors: [
-            { name: 'Black', colorBg: '#111827' },
-            { name: 'Brass', colorBg: '#FDE68A' },
-            { name: 'Chrome', colorBg: '#E5E7EB' },
-        ],
+        name: 'Coors Sunset S/S Standard Tee',
+        href: 'products/produit-1',
+        imageSrc: 'https://brixtonllc.myshopify.com/cdn/shop/files/go0cukocnuqzvyvzuzlx.png?format=pjpg&v=1698717880&width=800',
+        imageAlt: '',
     },
 ]
 
@@ -100,7 +72,7 @@ export default function BestSellers() {
                                                 </h3>
                                                 <div className="flex justify-center items-center">
                                                     <Stars numbers={[1, 2, 3, 4, 5]} />
-                                                    <p className="ml-3 mt-1 text-[#FF80C8] font-semibold text-lg">{product.price}</p>
+                                                    <p className="ml-3 mt-1 text-black font-semibold text-lg">{product.price}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -111,7 +83,7 @@ export default function BestSellers() {
                     </div>
 
                     <div className="mt-12 px-4 sm:hidden">
-                        <a href="#" className="text-sm font-semibold text-[#FF80C8]">
+                        <a href="#" className="text-sm font-semibold text-black">
                             Voir tout
                             <span aria-hidden="true"> &rarr;</span>
                         </a>
