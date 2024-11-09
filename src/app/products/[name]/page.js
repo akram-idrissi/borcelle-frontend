@@ -99,7 +99,7 @@ const relatedProducts = [
   },
   // More products...
 ]
-const categoriesURI = "/categorie";
+const categoriesURI = "/categories";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
