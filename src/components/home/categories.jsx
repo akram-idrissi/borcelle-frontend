@@ -86,12 +86,7 @@ export default function Categories() {
                         </div>
                     </div>
 
-                    <div className="mt-12 px-4 sm:hidden">
-                        <a href="#" className="text-sm font-semibold text-[#FF80C8]">
-                            Voir tout
-                            <span aria-hidden="true"> &rarr;</span>
-                        </a>
-                    </div>
+                    
                 </div>
             </section>
         </>
