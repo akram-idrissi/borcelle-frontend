@@ -4,18 +4,18 @@ import { CheckBadgeIcon, CurrencyDollarIcon, TruckIcon } from '@heroicons/react/
 
 const features = [
     {
-        name: 'Haute qualité:',
-        description: 'Nos produits sont fabriqués avec des ingrédients de qualité, garantissant des résultats durables et impeccables.',
+        name: 'High Quality:',
+        description: 'Our products are made with premium ingredients, ensuring long-lasting and flawless results.',
         icon: CheckBadgeIcon,
     },
     {
-        name: 'Abordable:',
-        description: 'Nous proposons des cosmétiques de premier choix à des prix accessibles à tous, sans compromis sur l\'excellence.',
+        name: 'Affordable:',
+        description: 'We offer top-quality cosmetics at accessible prices for everyone, without compromising on excellence.',
         icon: CurrencyDollarIcon,
     },
     {
-        name: 'Livraison rapide:',
-        description: 'Recevez vos produits préférés rapidement à votre porte, afin de ne jamais attendre pour améliorer votre routine beauté.',
+        name: 'Fast Delivery:',
+        description: 'Get your favorite products quickly delivered to your door, so you never have to wait to elevate your beauty routine.',
         icon: TruckIcon,
     },
 ]
@@ -49,10 +49,10 @@ export default function Whyus() {
                     <div className="lg:flex items-start justify-end lg:order-first">
                         <img
                             alt="Product screenshot"
-                            src="/why-us.jpg"
-                            width={2432}
-                            height={1442}
-                            className="w-full rounded-3xl max-w-none"
+                            src="/why-us.png"
+                            width={500}
+                            height={500}
+                            className="rounded-3xl max-w-none"
                         />
                     </div>
                 </div>
