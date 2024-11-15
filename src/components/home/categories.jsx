@@ -1,6 +1,8 @@
 'use client'
 
 
+import Link from 'next/link';
+
 const categories = [
     {
         id: 1,
@@ -71,10 +73,10 @@ export default function Categories() {
                                             </div>
                                             <div className="mt-6">
                                                 <h3 className="mt-1 font-semibold text-lg text-[#1a1a1a]">
-                                                    <a href={product.href}>
-                                                        <span className="absolute inset-0" />
-                                                        {product.name}
-                                                    </a>
+                                                <Link href={{ pathname: product.href }}>
+                                                    <span className="absolute inset-0" />
+                                                    {product.name}
+                                                </Link>
                                                 </h3>
                                             </div>
                                         </div>

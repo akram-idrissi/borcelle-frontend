@@ -17,13 +17,13 @@ export default function NewsLetter() {
         <>
             <div className="bg-white pb-32 sm:pb-40">
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-                    <div className="relative isolate flex justify-between flex-col gap-10 overflow-hidden bg-[#efe5f8] px-6 py-24 shadow-2xl sm:rounded-3xl sm:px-24 xl:flex-row xl:items-center xl:py-32">
+                    <div className="relative isolate flex justify-between flex-col gap-10 overflow-hidden bg-[#000] px-6 py-24 shadow-2xl sm:rounded-3xl sm:px-24 xl:flex-row xl:items-center xl:py-32">
                         <div>
-                            <h2 className="font-abhaya max-w-2xl text-3xl font-bold tracking-tight text-black sm:text-5xl xl:max-w-none xl:flex-auto">
-                                Recevez  jusqu’a -20% off  !
+                            <h2 className="font-abhaya max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-5xl xl:max-w-none xl:flex-auto">
+                                Get up to 20% off !
                             </h2>
                             <p className="mt-2 leading-8 text-[#797979] text-sm">
-                                Profitez d’un code promo qui sera envoyé à votre adresse mail
+                                Enjoy a promo code that will be sent to your email address.
                             </p>
                         </div>
 
@@ -37,15 +37,15 @@ export default function NewsLetter() {
                                     name="email"
                                     type="email"
                                     required
-                                    placeholder="Entrez votre mail"
+                                    placeholder="Enter your mail"
                                     autoComplete="email"
-                                    className="min-w-0 flex-auto rounded-md border-0 bg-white px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white focus:ring-2 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6"
+                                    className="placeholder:text-black min-w-0 flex-auto rounded-md border-0 bg-white px-3.5 py-2 text-black shadow-sm ring-1 ring-inset ring-black focus:ring-2 focus:ring-inset focus:ring-black sm:text-sm sm:leading-6"
                                 />
                                 <button
                                     type="submit"
                                     className="flex-none rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                                 >
-                                    Envoyer
+                                    Send
                                 </button>
                             </div>
                         </form>
@@ -64,8 +64,8 @@ export default function NewsLetter() {
                                     gradientUnits="userSpaceOnUse"
                                     gradientTransform="translate(512 512) rotate(90) scale(512)"
                                 >
-                                    <stop stopColor="#7775D6" />
-                                    <stop offset={1} stopColor="#E935C1" stopOpacity={0} />
+                                    <stop stopColor="#ffffff" />
+                                    <stop offset={1} stopColor="#ffffff" stopOpacity={0} />
                                 </radialGradient>
                             </defs>
                         </svg>

@@ -3,7 +3,7 @@ const posts = [
     id: 1,
     title: 'Boost your conversion rate',
     href: '#',
-    description: 'Obsessed with this lip combo! The lip liner in Obsession, the lipstick in Heartfelt, and the CheekOil & Lip from @muacosmetics.ma made the perfect trio!',
+    description: 'Obsessed with these jeans! The high waist and stretch are just perfect, and they go with everything I own!',
     date: 'Mar 16, 2020',
     datetime: '2020-03-16',
     category: { title: 'Marketing', href: '#' },
@@ -18,7 +18,7 @@ const posts = [
     id: 2,
     title: 'Boost your conversion rate',
     href: '#',
-    description: 'Galentine’s look was absolutely stunning! 😍 Thanks to the amazing products from @muacosmetics.ma',
+    description: 'Loving my new sweater from this brand! It’s super cozy, fits perfectly, and the color is exactly as shown online!',
     date: 'Mar 16, 2020',
     datetime: '2020-03-16',
     category: { title: 'Marketing', href: '#' },
@@ -33,7 +33,7 @@ const posts = [
     id: 3,
     title: 'Boost your conversion rate',
     href: '#',
-    description: 'Did a full face using only @muacosmetics.ma products, and I’m beyond impressed with the results! ❤️',
+    description: 'Absolutely in love with my dress! So flattering, the quality is great, and I get so many compliments on it!',
     date: 'Mar 16, 2020',
     datetime: '2020-03-16',
     category: { title: 'Marketing', href: '#' },
@@ -51,7 +51,7 @@ export default function Testimonials() {
     <div className="bg-white pb-32 sm:pb-40">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="w-full lg:mx-0">
-          <h2 className="font-abhaya sm:text-center text-5xl font-bold tracking-tight text-[#1a1a1a] sm:text-7xl">Témoignages des clients</h2>
+          <h2 className="font-abhaya sm:text-center text-5xl font-bold tracking-tight text-[#1a1a1a] sm:text-7xl">Clients Reviews</h2>
         </div>
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 pt-10 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {posts.map((post) => (

@@ -1,8 +1,8 @@
 'use client'
 
 import Link from 'next/link';
-import { useState } from 'react'
-import { usePathname } from 'next/navigation';
+import { useState, useEffect } from 'react'
+import { useParams } from 'next/navigation';
 
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PlusIcon } from '@heroicons/react/20/solid'
@@ -19,6 +19,7 @@ import {
   DisclosureButton,
   DisclosurePanel
 } from '@headlessui/react'
+import { getProductsByCategory } from '@/services/api';
 
 
 const filters = [
@@ -57,34 +58,18 @@ const filters = [
     ],
   },
 ]
-const products = [
-  {
-    id: 1,
-    name: 'Basic Tee 8-Pack',
-    href: '/products/product-1',
-    price: '$256',
-    description: 'Get the full lineup of our Basic Tees. Have a fresh shirt all week, and an extra for laundry day.',
-    options: '8 colors',
-    imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/category-page-02-image-card-01.jpg',
-    imageAlt: 'Eight shirts arranged on table in black, olive, grey, blue, white, red, mustard, and green.',
-  },
-  {
-    id: 2,
-    name: 'Basic Tee',
-    href: '/products/product-1',
-    price: '$32',
-    description: 'Look like a visionary CEO and wear the same black t-shirt every day.',
-    options: 'Black',
-    imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/category-page-02-image-card-02.jpg',
-    imageAlt: 'Front of plain black t-shirt.',
-  },
-  // More products...
-]
+
 
 
 export default function CategoryListing() {
-  const category = usePathname().split("/").slice(-1).pop();
+  const category = useParams()["name"];
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
+  const [products, setProdcts] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {setProdcts(await getProductsByCategory(category));};
+    fetchData();
+  }, []);
 
   return (
     <div className="bg-white">
@@ -247,21 +232,21 @@ export default function CategoryListing() {
                   <div className="aspect-h-4 aspect-w-3 bg-gray-200 sm:aspect-none group-hover:opacity-75 sm:h-96">
                     <img
                       alt={product.imageAlt}
-                      src={product.imageSrc}
+                      src={product.imageSrc[0]}
                       className="h-full w-full object-cover object-center sm:h-full sm:w-full"
                     />
                   </div>
                   <div className="flex flex-1 flex-col space-y-2 p-4">
-                    <h3 className="text-sm font-medium text-gray-900">
+                    <h3 className="text-sm font-medium text-gray-900 max-w-64 truncate">
                     <Link href={{ pathname: product.href, query: { category: category} }}>
                       <span aria-hidden="true" className="absolute inset-0" />
-                      {product.name}
+                      {product.title}
                     </Link>
                     </h3>
                     <p className="text-sm text-gray-500">{product.description}</p>
                     <div className="flex flex-1 flex-col justify-end">
-                      <p className="text-sm italic text-gray-500">{product.options}</p>
-                      <p className="text-base font-medium text-gray-900">{product.price}</p>
+                      <p className="text-sm italic text-gray-500">{product.sizes[0].join("-")}</p>
+                      <p className="text-base font-medium text-gray-900">45 MAD</p>
                     </div>
                   </div>
                 </div>
