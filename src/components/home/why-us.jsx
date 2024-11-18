@@ -52,7 +52,7 @@ export default function Whyus() {
                             src="/why-us.png"
                             width={500}
                             height={500}
-                            className="rounded-3xl max-w-none"
+                            className="w-full sm:w-0 rounded-3xl max-w-none"
                         />
                     </div>
                 </div>
