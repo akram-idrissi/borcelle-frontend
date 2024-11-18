@@ -12,7 +12,7 @@ import { getProductById } from '@/services/api';
 
 
 import { StarIcon } from '@heroicons/react/20/solid'
-import { HeartIcon, MinusIcon, PlusIcon } from '@heroicons/react/24/outline'
+import { HeartIcon, CurrencyDollarIcon, GlobeAmericasIcon } from '@heroicons/react/24/outline'
 
 import {
   Disclosure,
@@ -41,6 +41,36 @@ const relatedProducts = [
   },
   // More products...
 ]
+const details = {
+  colors: [
+    { name: 'Black', bgColor: 'bg-gray-900', selectedColor: 'ring-gray-900' },
+    { name: 'Heather Grey', bgColor: 'bg-gray-400', selectedColor: 'ring-gray-400' },
+  ],
+  sizes: [
+    { name: 'XXS', inStock: true },
+    { name: 'XS', inStock: true },
+    { name: 'S', inStock: true },
+    { name: 'M', inStock: true },
+    { name: 'L', inStock: true },
+    { name: 'XL', inStock: false },
+  ],
+  description: `
+    <p>The Basic tee is an honest new take on a classic. The tee uses super soft, pre-shrunk cotton for true comfort and a dependable fit. They are hand cut and sewn locally, with a special dye technique that gives each tee it's own look.</p>
+    <p>Looking to stock your closet? The Basic tee also comes in a 3-pack or 5-pack at a bundle discount.</p>
+  `,
+  details: [
+    'Only the best materials',
+    'Ethically and locally made',
+    'Pre-washed and pre-shrunk',
+    'Machine wash cold with similar colors',
+  ],
+}
+
+const policies = [
+  { name: 'International delivery', icon: GlobeAmericasIcon, description: 'Get your order in 2 days' },
+  { name: 'Loyalty rewards', icon: CurrencyDollarIcon, description: "Don't look at other tees" },
+]
+
 const categoriesURI = "/categories";
 
 function classNames(...classes) {
@@ -52,6 +82,8 @@ export default function Example() {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [selectedSize, setSelectedSize] = useState()
+
 
   useEffect(() => {
     const fetchProduct = async (id) => {
@@ -61,6 +93,7 @@ export default function Example() {
         if (result.error) {
           setError(result.error);
         } else {
+          console.log(result.data);
           setProduct(result.data);
         }
       } catch (err) {
@@ -102,9 +135,9 @@ export default function Example() {
                 </li>
                 <svg viewBox="0 0 6 20" aria-hidden="true" className="h-5 w-auto text-gray-300">
                         <path d="M4.878 4.34H3.551L.27 16.532h1.327l3.281-12.19z" fill="currentColor" />
-                      </svg>
-                <li className="text-sm">
-                  <span aria-current="page" className="capitalize font-medium text-gray-500 hover:text-gray-600">
+                </svg>
+                <li className="text-sm flex items-center">
+                  <span aria-current="page" className="inline-block max-w-32 sm:max-w-none truncate capitalize font-medium text-gray-500 hover:text-gray-600">
                     {product.title}
                   </span>
                 </li>
@@ -119,12 +152,12 @@ export default function Example() {
                 {/* Image gallery */}
                 <TabGroup className="flex flex-col-reverse">
                   {/* Image selector */}
-                  <div className="mx-auto mt-6 hidden w-full max-w-2xl sm:block lg:max-w-none">
-                    <TabList className="grid grid-cols-4 gap-6">
+                  <div className="amx-auto mt-6 hidden w-full max-w-2xl sm:block lg:max-w-none overflow-auto">
+                    <TabList className="m-4 inline-flex gap-6">
                       {product.imageSrc.map((image, index) => (
                         <Tab
                           key={index}
-                          className="group relative flex h-24 cursor-pointer items-center justify-center rounded-md bg-white text-sm font-medium uppercase text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring focus:ring-opacity-50 focus:ring-offset-4"
+                          className="group relative flex w-32 h-24 cursor-pointer items-center justify-center rounded-md bg-white text-sm font-medium uppercase text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring focus:ring-opacity-50 focus:ring-offset-4"
                         >
                           <span className="sr-only">name</span>
                           <span className="absolute inset-0 overflow-hidden rounded-md">
@@ -170,15 +203,39 @@ export default function Example() {
                           <StarIcon
                             key={rating}
                             aria-hidden="true"
-                            className={classNames(
-                              product.rating > rating ? 'text-black' : 'text-gray-300',
-                              'h-5 w-5 flex-shrink-0',
-                            )}
+                            className={'text-[#facc15] h-5 w-5 flex-shrink-0'}
                           />
                         ))}
                       </div>
                       <p className="sr-only">{product.rating} out of 5 stars</p>
                     </div>
+                  </div>
+
+                  {/* Size picker */}
+                  <div className="mt-8">
+                    <div className="flex items-center justify-between">
+                      <h2 className="text-sm font-medium text-gray-900">Size</h2>
+                    </div>
+
+                    <fieldset aria-label="Choose a size" className="mt-2">
+                      <RadioGroup
+                        value={selectedSize}
+                        onChange={setSelectedSize}
+                        className="grid grid-cols-3 gap-3 sm:grid-cols-6"
+                      >
+                        {product.sizes[0].map((size, id) => (
+                          <Radio
+                            key={id}
+                            value={size}
+                            className={classNames(
+                              'flex items-center justify-center rounded-md border border-gray-200 bg-white px-3 py-3 text-sm font-medium uppercase text-gray-900 hover:bg-gray-50 data-[checked]:border-transparent data-[checked]:bg-black data-[checked]:text-white data-[focus]:ring-2 data-[focus]:ring-black data-[focus]:ring-offset-2 data-[checked]:hover:bg-black sm:flex-1',
+                            )}
+                          >
+                            {size}
+                          </Radio>
+                        ))}
+                      </RadioGroup>
+                    </fieldset>
                   </div>
 
                   <div className="mt-6">
@@ -215,8 +272,47 @@ export default function Example() {
                     <h2 id="details-heading" className="sr-only">
                       Additional details
                     </h2>
+                  </section>
 
-                    
+                  {/* Product details */}
+                  <div className="mt-10">
+                    <h2 className="text-sm font-medium text-gray-900">Description</h2>
+
+                    <div
+                      dangerouslySetInnerHTML={{ __html: details.description }}
+                      className="prose prose-sm mt-4 text-gray-500"
+                    />
+                  </div>
+
+                  <div className="mt-8 border-t border-gray-200 pt-8">
+                    <h2 className="text-sm font-medium text-gray-900">Fabric &amp; Care</h2>
+
+                    <div className="prose prose-sm mt-4 text-gray-500">
+                      <ul role="list">
+                        {details.details.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* Policies */}
+                  <section aria-labelledby="policies-heading" className="mt-10">
+                    <h2 id="policies-heading" className="sr-only">
+                      Our Policies
+                    </h2>
+
+                    <dl className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+                      {policies.map((policy) => (
+                        <div key={policy.name} className="rounded-lg border border-gray-200 bg-gray-50 p-6 text-center">
+                          <dt>
+                            <policy.icon aria-hidden="true" className="mx-auto h-6 w-6 flex-shrink-0 text-gray-400" />
+                            <span className="mt-4 text-sm font-medium text-gray-900">{policy.name}</span>
+                          </dt>
+                          <dd className="mt-1 text-sm text-gray-500">{policy.description}</dd>
+                        </div>
+                      ))}
+                    </dl>
                   </section>
                 </div>
               </div>
