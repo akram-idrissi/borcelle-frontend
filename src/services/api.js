@@ -1,23 +1,10 @@
 import axios from "axios";
 
+
 const backendURL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
-export const getProducts = async () => {
-  try {
-    const response = await axios.get(`${backendURL}/api/products`);
-    return response.data;  
-  } catch (error) {
-    console.error("Failed to fetch products:", error);
-    throw error;  
-  }
-};
-
 export const getProductById = async (id) => {
-  const result = {
-    loading: true,
-    error: null,
-    data: null,
-  };
+  const result = {loading: true, error: null, data: null};
 
   try {
     const response = await axios.get(`${backendURL}/api/products/${id}`);
@@ -31,11 +18,15 @@ export const getProductById = async (id) => {
 };
 
 export const getProductsByCategory = async (category) => {
+  const result = {loading: true, error: null, data: null};
+
   try {
     const response = await axios.get(`${backendURL}/api/products/category/${category}`);
-    return response.data;  
+    result.data = response.data;
   } catch (error) {
-    console.error("Failed to fetch products:", error);
-    throw error;  
+    result.error = error.message || "An error occurred while fetching category products";
+  } finally {
+    result.loading = false;
   }
+  return result;
 };
