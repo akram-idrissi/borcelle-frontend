@@ -13,13 +13,21 @@ export const getProducts = async () => {
 };
 
 export const getProductById = async (id) => {
+  const result = {
+    loading: true,
+    error: null,
+    data: null,
+  };
+
   try {
     const response = await axios.get(`${backendURL}/api/products/${id}`);
-    return response.data;  
+    result.data = response.data;
   } catch (error) {
-    console.error("Failed to fetch products:", error);
-    throw error;  
+    result.error = error.message || "An error occurred while fetching the product";
+  } finally {
+    result.loading = false;
   }
+  return result;
 };
 
 export const getProductsByCategory = async (category) => {
