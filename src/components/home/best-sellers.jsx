@@ -82,12 +82,7 @@ export default function BestSellers() {
                         </div>
                     </div>
 
-                    <div className="mt-12 px-4 sm:hidden">
-                        <a href="#" className="text-sm font-semibold text-black">
-                            Voir tout
-                            <span aria-hidden="true"> &rarr;</span>
-                        </a>
-                    </div>
+                    
                 </div>
             </section>
         </>
