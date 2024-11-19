@@ -5,17 +5,17 @@ import { CheckBadgeIcon, CurrencyDollarIcon, TruckIcon } from '@heroicons/react/
 const features = [
     {
         name: 'High Quality:',
-        description: 'Our products are made with premium ingredients, ensuring long-lasting and flawless results.',
+        description: 'Our clothing is crafted with premium materials, ensuring durability and a flawless finish.',
         icon: CheckBadgeIcon,
     },
     {
         name: 'Affordable:',
-        description: 'We offer top-quality cosmetics at accessible prices for everyone, without compromising on excellence.',
+        description: 'We offer high-quality fashion at prices accessible to everyone, without compromising on style or craftsmanship.',
         icon: CurrencyDollarIcon,
     },
     {
         name: 'Fast Delivery:',
-        description: 'Get your favorite products quickly delivered to your door, so you never have to wait to elevate your beauty routine.',
+        description: 'Enjoy fast delivery of your favorite products straight to your door, so you can enhance your style without delay.',
         icon: TruckIcon,
     },
 ]
