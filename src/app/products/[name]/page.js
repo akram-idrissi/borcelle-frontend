@@ -15,8 +15,8 @@ import Details from './details';
 import Policies from './policies';
 import AddToCard from './addToCard';
 import Stars from '@/helpers/stars';
-import Breadcrumb from './breadcrumb';
 import RelatedProducts from './relatedProducts';
+import Breadcrumb from '../../../components/breadcrumb';
 
 
 const categoriesURI = "/categories";
