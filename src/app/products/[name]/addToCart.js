@@ -3,7 +3,7 @@
 import { HeartIcon } from '@heroicons/react/24/outline'
 
 
-export default function AddToCard() {
+export default function AddToCart() {
 
   return (
     <form className="mt-6">
