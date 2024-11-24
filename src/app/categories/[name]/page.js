@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useParams } from 'next/navigation';
+import { useParams, useSearchParams, useRouter } from 'next/navigation';
 
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
@@ -13,29 +13,43 @@ import Breadcrumb from '@/components/breadcrumb';
 
 import { getProductsByCategory } from '@/services/api';
 import ProductsListing from './productsListing';
+import Pagination from './pagination';
 
 
 export default function CategoryListing() {
+  const router = useRouter();
   const category = useParams()["name"];
+  const searchParams = useSearchParams();
+  const initialPage = parseInt(searchParams.get('page')) || 0;
+
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [totalPages, setTotalPages] = useState(0);
+  const [currentPage, setCurrentPage] = useState(initialPage);
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
 
   const breadcrumbLinks = [
     { 'href': '', 'name': category }
   ]
 
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
+    router.push(`?page=${newPage}`); 
+  };
+
 
   useEffect(() => {
-    const fetchProducts = async (category) => {
+    const fetchProducts = async (category, currentPage) => {
       try {
-        const result = await getProductsByCategory(category);
+        const result = await getProductsByCategory(category, currentPage);
         setLoading(false);
         if (result.error) {
           setError(result.error);
         } else {
-          setProducts(result.data);
+          setTotalPages(result.data.totalPages);
+          setCurrentPage(result.data.pageable.pageNumber);
+          setProducts(result.data.content);
         }
       } catch (err) {
         setLoading(false);
@@ -43,8 +57,8 @@ export default function CategoryListing() {
       }
     };
 
-    fetchProducts(category);
-  }, [category]);
+    fetchProducts(category, currentPage);
+  }, [category, currentPage]);
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
@@ -74,6 +88,7 @@ export default function CategoryListing() {
             </h2>
 
             <ProductsListing products={products} />
+            <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange}  />
           </section>
         </div>
       </main>
