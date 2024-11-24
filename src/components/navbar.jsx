@@ -47,7 +47,7 @@ export default function Navbar({sticky=false}) {
                             className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                         />
                     </a>
-                    <a href="#" className="group -m-2 mr-4 flex items-center p-2">
+                    <a href="/cart" className="group -m-2 mr-4 flex items-center p-2">
                         <ShoppingBagIcon
                             aria-hidden="true"
                             className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
@@ -101,7 +101,7 @@ export default function Navbar({sticky=false}) {
                                 >
                                     Log in
                                 </a> */}
-                                <a href="#" className="group -m-2 mr-4 flex items-center p-2">
+                                <a href="/cart" className="group -m-2 mr-4 flex items-center p-2">
                                     <ShoppingBagIcon
                                         aria-hidden="true"
                                         className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
