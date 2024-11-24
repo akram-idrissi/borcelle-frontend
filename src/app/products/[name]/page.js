@@ -13,7 +13,7 @@ import Sizes from './sizes';
 import Images from './images';
 import Details from './details';
 import Policies from './policies';
-import AddToCard from './addToCard';
+import AddToCart from './addToCart';
 import Stars from '@/helpers/stars';
 import RelatedProducts from './relatedProducts';
 import Breadcrumb from '../../../components/breadcrumb';
@@ -87,8 +87,8 @@ export default function Example() {
               {/* Size picker */}
               <Sizes sizes={product.sizes[0]} />
 
-              {/* Add to card */}
-              <AddToCard />
+              {/* Add to cart */}
+              <AddToCart />
 
               {/* Product details */}
               <Details />
