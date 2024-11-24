@@ -85,24 +85,10 @@ export default function Cart() {
                         <label htmlFor={`quantity-${productIdx}`} className="sr-only">
                           Quantity, {product.name}
                         </label>
-                        <select
-                          id={`quantity-${productIdx}`}
-                          name={`quantity-${productIdx}`}
-                          className="max-w-full rounded-md border border-gray-300 py-1.5 text-left text-base font-medium 
-                          leading-5 text-gray-700 shadow-sm focus:border-black focus:outline-none 
-                          focus:ring-1 focus:ring-black sm:text-sm"
-                        >
-                          <option value={1}>1</option>
-                          <option value={2}>2</option>
-                          <option value={3}>3</option>
-                          <option value={4}>4</option>
-                          <option value={5}>5</option>
-                          <option value={6}>6</option>
-                          <option value={7}>7</option>
-                          <option value={8}>8</option>
-                          <option value={8}>9</option>
-                          <option value={8}>10</option>
-                        </select>
+
+                        <input type="number" min={1} placeholder='1' name={`quantity-${productIdx}`} id={`quantity-${productIdx}`} 
+                          className="w-1/2 rounded-md border border-gray-300 py-1.5 text-left text-base font-medium 
+                          leading-5 text-gray-700 shadow-sm focus:border-black focus:outline-none focus:ring-1 focus:ring-black sm:text-sm" />
 
                         <div className="absolute right-0 top-0">
                           <button type="button" className="-m-2 inline-flex p-2 text-gray-400 hover:text-gray-500">
