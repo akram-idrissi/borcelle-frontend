@@ -1,39 +1,26 @@
 'use client'
 
+import { useEffect, useState } from 'react'
+
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 
-import { CheckIcon, ClockIcon, XMarkIcon as XMarkIconMini } from '@heroicons/react/20/solid'
-
-
-const products = [
-  {
-    id: 1,
-    name: 'Basic Tee',
-    href: '#',
-    price: '320.00 MAD',
-    color: 'Sienna',
-    inStock: true,
-    size: 'Large',
-    imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/shopping-cart-page-01-product-01.jpg',
-    imageAlt: "Front of men's Basic Tee in sienna.",
-  },
-  {
-    id: 2,
-    name: 'Basic Tee',
-    href: '#',
-    price: '320.00 MAD',
-    color: 'Noir',
-    inStock: false,
-    leadTime: '3–4 semaines',
-    size: 'Large',
-    imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/shopping-cart-page-01-product-02.jpg',
-    imageAlt: "Front of men's Basic Tee in black.",
-  }
-]
+import { XMarkIcon as XMarkIconMini } from '@heroicons/react/20/solid'
+import { getProductsFromCart, removeFromCart } from '@/services/cart'
 
 
 export default function Cart() {
+
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    setProducts(getProductsFromCart());
+  }, []);
+  
+  const handleRemove = (productId) => {
+    removeFromCart(productId);
+    setProducts(getProductsFromCart()); 
+  };
 
   return (
     <div className="bg-white">
@@ -51,13 +38,12 @@ export default function Cart() {
               Items in your shopping cart
             </h2>
 
-            <ul role="list" className="sm:max-h-64 sm:overflow-x-hidden sm:overflow-y-auto divide-y divide-gray-200 border-b border-t border-gray-200">
+            <ul role="list" className="sm:max-h-[274px] sm:overflow-x-hidden sm:overflow-y-auto divide-y divide-gray-200 border-b border-t border-gray-200">
               {products.map((product, productIdx) => (
-                <li key={product.id} className="flex py-6 sm:py-10">
+                <li key={productIdx} className="flex py-6 sm:py-10">
                   <div className="flex-shrink-0">
                     <img
-                      alt={product.imageAlt}
-                      src={product.imageSrc}
+                      src={product.value.image}
                       className="h-24 w-24 rounded-md object-cover object-center sm:h-48 sm:w-48"
                     />
                   </div>
@@ -67,18 +53,18 @@ export default function Cart() {
                       <div>
                         <div className="flex justify-between">
                           <h3 className="text-sm">
-                            <a href={product.href} className="font-medium text-gray-700 hover:text-gray-800">
-                              {product.name}
+                            <a href={product.value.href} className="inline-block max-w-52 truncate font-medium text-gray-700 hover:text-gray-800">
+                              {product.value.title}
                             </a>
                           </h3>
                         </div>
                         <div className="mt-1 flex text-sm">
-                          <p className="text-gray-500">{product.color}</p>
-                          {product.size ? (
-                            <p className="ml-4 border-l border-gray-200 pl-4 text-gray-500">{product.size}</p>
+                          <p className="text-gray-500">{product.value.category}</p>
+                          {product.value.size ? (
+                            <p className="ml-4 border-l border-gray-200 pl-4 text-gray-500">{product.value.size}</p>
                           ) : null}
                         </div>
-                        <p className="mt-1 text-sm font-medium text-gray-900">{product.price}</p>
+                        <p className="mt-1 text-sm font-medium text-gray-900">{product.value.price} MAD</p>
                       </div>
 
                       <div className="mt-4 sm:mt-0 sm:pr-9">
@@ -90,7 +76,7 @@ export default function Cart() {
                           className="w-1/2 rounded-md border border-gray-300 py-1.5 text-left text-base font-medium 
                           leading-5 text-gray-700 shadow-sm focus:border-black focus:outline-none focus:ring-1 focus:ring-black sm:text-sm" />
 
-                        <div className="absolute right-0 top-0">
+                        <div className="absolute right-0 top-0" onClick={() => handleRemove(product.value.id)}>
                           <button type="button" className="-m-2 inline-flex p-2 text-gray-400 hover:text-gray-500">
                             <span className="sr-only">Remove</span>
                             <XMarkIconMini aria-hidden="true" className="h-5 w-5" />
@@ -98,16 +84,6 @@ export default function Cart() {
                         </div>
                       </div>
                     </div>
-
-                    <p className="mt-4 flex space-x-2 text-sm text-gray-700">
-                      {product.inStock ? (
-                        <CheckIcon aria-hidden="true" className="h-5 w-5 flex-shrink-0 text-green-500" />
-                      ) : (
-                        <ClockIcon aria-hidden="true" className="h-5 w-5 flex-shrink-0 text-gray-300" />
-                      )}
-
-                      <span>{product.inStock ? 'In stock' : `Livré dans ${product.leadTime}`}</span>
-                    </p>
                   </div>
                 </li>
               ))}
