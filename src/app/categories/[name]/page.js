@@ -60,7 +60,6 @@ export default function CategoryListing() {
     fetchProducts(category, currentPage);
   }, [category, currentPage]);
 
-  if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
   if (!products) return <div>Products not found.</div>;
 
@@ -86,9 +85,12 @@ export default function CategoryListing() {
             <h2 id="product-heading" className="sr-only">
               Products
             </h2>
-
-            <ProductsListing products={products} />
-            <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange}  />
+            {loading ? "Loading"  :
+              <>
+                <ProductsListing products={products} />
+                <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange}  />
+              </>
+            }
           </section>
         </div>
       </main>
