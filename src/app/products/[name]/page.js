@@ -88,7 +88,7 @@ export default function Example() {
               <Sizes sizes={product.sizes[0]} />
 
               {/* Add to cart */}
-              <AddToCart />
+              <AddToCart product={product} />
 
               {/* Product details */}
               <Details />
