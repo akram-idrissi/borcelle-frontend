@@ -66,7 +66,7 @@ export default function CategoryListing() {
 
   return (
     <div className="bg-white">
-      <Navbar />
+      <Navbar sticky={true} />
 
       {/* Mobile filter dialog */}
       <MobileFilter mobileFiltersOpen={mobileFiltersOpen} setMobileFiltersOpen={setMobileFiltersOpen} />

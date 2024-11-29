@@ -60,7 +60,7 @@ export default function Example() {
   return (
     <div className="bg-white">
 
-      <Navbar />
+      <Navbar sticky={true} />
       <Breadcrumb links={breadcrumbLinks} />
 
       <main className="mx-auto max-w-7xl sm:px-6 sm:pt-16 lg:px-8 pt-10">
