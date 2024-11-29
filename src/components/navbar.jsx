@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, ShoppingBagIcon, MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
@@ -11,8 +11,22 @@ const navigation = [
     { name: 'Jackets', href: '/categories/jackets' },
 ]
 
-export default function Navbar({sticky=false}) {
+export default function Navbar({ sticky = false }) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+    const [cartCount, setCartCount] = useState(0);
+
+    useEffect(() => {
+        const initialCount = parseInt(localStorage.getItem("products-counter")) || 0;
+        setCartCount(initialCount);
+
+        const handleStorageChange = () => {
+            const updatedCount = parseInt(localStorage.getItem("products-counter")) || 0;
+            setCartCount(updatedCount);
+        };
+
+        window.addEventListener("products-counter", handleStorageChange);
+        return () => window.removeEventListener("products-counter", handleStorageChange);
+    }, []);
 
     return (
         <header className={`${sticky && "sticky"} top-0 z-50 bg-white/60 backdrop-blur-lg`}>
@@ -52,7 +66,7 @@ export default function Navbar({sticky=false}) {
                             aria-hidden="true"
                             className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                         />
-                        <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
+                        <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">{cartCount}</span>
                         <span className="sr-only">items in cart, view bag</span>
                     </a>
                     {/* <a href="#" className="text-sm font-semibold border-2 rounded-md border-[#FF80C8] px-4 py-2 text-gray-900">
@@ -106,7 +120,7 @@ export default function Navbar({sticky=false}) {
                                         aria-hidden="true"
                                         className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                                     />
-                                    <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
+                                    <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">{cartCount}</span>
                                     <span className="sr-only">items in cart, view bag</span>
                                 </a>
                                 <a href="#" className="group -m-2 mr-4 flex items-center p-2">
