@@ -4,6 +4,7 @@ export const updateCartCounter = (value) => {
         productsCount = productsCount ? parseInt(productsCount) : 0;
         productsCount = productsCount + value;
         localStorage.setItem("products-counter", productsCount);
+        window.dispatchEvent(new CustomEvent("products-counter"));
         return productsCount;
     } catch (error) {
         console.error('Error updating products counter: ', error);
