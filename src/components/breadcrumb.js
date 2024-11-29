@@ -3,10 +3,10 @@
 import Link from 'next/link';
 
 
-export default function Breadcrumb({ links }) {
+export default function Breadcrumb({ links, sticky=false }) {
 
   return (
-    <div className="sticky top-0 z-50 bg-white mt-10">
+    <div className={`${sticky && "sticky"} top-0 z-50 bg-white mt-10`}>
       <nav aria-label="Breadcrumb" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <ol role="list" className="border-b flex items-center space-x-4 py-4">
           <li>
