@@ -1,6 +1,6 @@
 export default function Loader() {
     return (
-        <div className="text-[#fefefe] w-full h-full fixed top-0 left-0 bg-black opacity-20 z-50">
+        <div className="text-[#fefefe] w-full h-full fixed top-0 left-0 bg-black/25 z-50">
             <div className="flex justify-center items-center h-screen">
                 <div className="flex flex-col justify-center items-center font-medium text-2xl capitalize">
                     <svg aria-hidden="true" className="w-12 h-12 text-gray-200 animate-spin dark:text-gray-600
