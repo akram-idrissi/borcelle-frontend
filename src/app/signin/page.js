@@ -51,7 +51,7 @@ export default function Signin() {
                 </div>
 
                 <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                    <form onSubmit={handleSigninForm} className="space-y-6">
+                    <form onSubmit={handleSigninForm} method="post" className="space-y-6">
                         <div>
                             <label htmlFor="username" className="block text-sm font-medium leading-6 text-gray-900">
                                 Username
