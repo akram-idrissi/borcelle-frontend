@@ -4,12 +4,13 @@ import { useState } from "react";
 import { login } from "./api";
 import Link from "next/link";
 import Loader from "@/common/loader";
+import ErrorAlert from "@/common/error-alert";
 
 export default function Signin() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
-    const [error, setError] = useState("");
+    const [error, setError] = useState(false);
     const [response, setResponse] = useState("");
     const [loading, setLoading] = useState(false);
 
@@ -28,6 +29,7 @@ export default function Signin() {
     return (
         <>
             {loading && <Loader /> }
+            {error && <ErrorAlert /> }
             <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
                 <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                     <img
