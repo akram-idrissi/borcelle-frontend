@@ -5,8 +5,10 @@ import { login } from "./api";
 import Link from "next/link";
 import Loader from "@/common/loader";
 import ErrorAlert from "@/common/error-alert";
+import { validatePassword, validateUsername } from "./form-validation";
 
 export default function Signin() {
+    const [errors, setErrors] = useState({});
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
@@ -16,8 +18,14 @@ export default function Signin() {
 
     const handleSigninForm = async (event) => {
         event.preventDefault();
-        if (!username || !password)
+
+        let usernameError = validateUsername(username);
+        let passwordError = validatePassword(password);
+        
+        if (usernameError || passwordError) {
+            setErrors({username: usernameError, password: passwordError});
             return;
+        }
 
         setLoading(true);
         const result = await login({ username, password });
@@ -53,12 +61,12 @@ export default function Signin() {
                                     id="username"
                                     name="username"
                                     type="text"
-                                    required
-                                    onChange={(event) => setUsername(event.target.value)}
+                                    onChange={(event) => {setErrors({...errors, username: ""}); setUsername(event.target.value)}}
                                     autoComplete="username"
                                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-black sm:text-sm sm:leading-6"
                                 />
                             </div>
+                            {errors.username && <div className="text-xs text-red-500">{errors.username}</div>  }
                         </div>
 
                         <div>
@@ -77,12 +85,12 @@ export default function Signin() {
                                     id="password"
                                     name="password"
                                     type="password"
-                                    required
-                                    onChange={(event) => setPassword(event.target.value)}
+                                    onChange={(event) => {setErrors({...errors, password: ""}); setPassword(event.target.value)}}
                                     autoComplete="current-password"
                                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-black sm:text-sm sm:leading-6"
                                 />
                             </div>
+                            {errors.password && <div className="text-xs text-red-500">{errors.password}</div>  }
                         </div>
 
                         <div>
