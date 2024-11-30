@@ -26,3 +26,13 @@ export const validatePassword = (password) => {
    
     return null;
 };
+
+export const validateConfirmPassword = (password, confirmPassword) => {
+    if (!confirmPassword.trim()) {
+        return "Confirm password is required.";
+    }
+    if (password !== confirmPassword) {
+        return "Passwords do not match.";
+    }
+    return null;
+};
