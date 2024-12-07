@@ -91,6 +91,7 @@ export default function CategoryListing() {
                 <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange}  />
               </>
             }
+            {error && error}
           </section>
         </div>
       </main>
