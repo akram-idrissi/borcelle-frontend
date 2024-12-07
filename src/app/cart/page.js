@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
@@ -11,6 +12,7 @@ import { getProductsFromCart, removeFromCart } from '@/services/cart'
 
 export default function Cart() {
 
+  const router = useRouter()
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -20,6 +22,15 @@ export default function Cart() {
   const handleRemove = (productId) => {
     removeFromCart(productId);
     setProducts(getProductsFromCart()); 
+  };
+
+  const handleCheckoutBtn = (event) => {
+    event.preventDefault();
+    const isAuth = localStorage.getItem("is-auth");
+    
+    if (isAuth)
+      router.push("/checkout");
+    router.push("/signin");
   };
 
   return (
@@ -119,6 +130,7 @@ export default function Cart() {
             <div className="mt-6">
               <button
                 type="submit"
+                onClick={ (event) => handleCheckoutBtn(event)}
                 className="w-full rounded-md border border-transparent bg-black px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 focus:ring-offset-gray-50"
               >
                 Checkout
